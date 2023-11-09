@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Easy shop ecommerce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+   
+    <div class="contaniner">
+        <div class="navbar"> 
+            <div class="logo">
+               <a href="demo.html"> <img src="images/logo.png" width="200px"></a>
+    
+            </div>
+            <nav>
+
+            <ul id="MenuItems">
+                <li><a href="demo.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="ref.html">Account </a></li>
+            </ul>
+        </nav>
+        <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
+        <img  src="images/menu.png" class="menu-icon" onclick="menutoggle()">  
+        </div>
+        </div>
+
+
+        <!-- single product detail -->
+        <div class="small-container single-product">
+            <div class="row">
+               <div class="col-2">
+                 <img src="images/bts1.webp" width="50%" id="ProductImg">
+                 <div class="small-img-row">
+                    <div class="small-img-col">
+                        <img src="images/bts1.webp" width="50%" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="images/bts2.jpg" width="70%" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="images/bts3.avif" width="50%" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="images/bts4.avif" width="50%" class="small-img">
+                    </div>
+                 </div>
+
+</div>
+               <div class="col-2">
+                <p>Black T-shirt</p>
+                <h1>Black T-shirt by Puma</h1>
+                <h4> <i class="bi bi-currency-rupee"></i>1200</h4>
+                <select>
+                    <option>Select size</option>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                    <option>XL</option>
+                    <option>XXL</option>
+        
+            </select>
+            <input type="number" value="1">
+            <a href="cart.html" class="btn">Add To Cart</a>
+            <h3>Product details</h3>
+            <br>
+            <p>"Stay wild" change your look </p>
+               </div>
+            </div>
+        </div>
+        <!-- title -->
+        <div class="small-container">
+            <div class="row row-2">
+                <h2>Arriving soon!</h2>
+                
+            </div>
+
+        </div>
+
+        <!-- all products -->
+        <div class="small-container ">
+        
+            
+                <div class="row">
+                    <div class="col-4">
+                        <img src="images/product-9.jpg">
+                        
+                        <div class="rating">
+                            
+                       </div>
+                        
+                    </div>
+                    <div class="col-4">
+                        <img src="images/product-10.jpg">
+                        
+                        <div class="rating">
+                            
+                       </div>
+                        
+                    </div>
+                    <div class="col-4">
+                        <img src="images/product-11.jpg">
+                        
+                        <div class="rating">
+                          
+                       </div>
+                        
+                    </div>
+                    <div class="col-4">
+                        <img src="images/product-12.jpg">
+                        
+                        <div class="rating">
+                            
+                       </div>
+                        
+                    </div>
+                </div>
+            </div>  
+           
+            </div>
+     
+<!-- footer -->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <h3>Download our app</h3>
+                <p>Download App for Android and ios mobile phone.</p>
+                <div class="app-logo">
+                    <img src="images/play-store.png">
+                    <img src="images/app-store.png">
+
+                </div>
+            </div>
+            <div class="footer-col-2">
+                <img  src="images/logo.png">
+                
+            </div>
+            <div class="footer-col-3">
+                <h3>Follow us</h3>
+               <ul>
+                <li>Facebook</li>
+                <li>Instagram</li>
+                <li>Twitter </li>
+               </ul>
+            </div>
+            
+        </div>
+    </div>
+   
+
+</div>
+<!-- js -->
+<script>
+    var MenuItems=document.getElementById("MenuItems")
+    MenuItems.style.maxHeight="0 px";
+    function menutoggle(){
+        if(MenuItems.style.maxHeight=="0 px"){
+            MenuItems.style.maxHeight="200 px"
+        }
+        else{
+            MenuItems.style.maxHeight="0 px"
+        }
+    }
+</script>
+
+<!-- js for product gallery -->
+<script>
+   var  ProductImg=document.getElementById("ProductImg");
+   var SmallImg=document.getElementsByClassName("small-img");
+   SmallImg[0].onclick=function()
+   {
+    ProductImg.src=SmallImg[0].src;
+   }
+   SmallImg[1].onclick=function()
+   {
+    ProductImg.src=SmallImg[1].src;
+   }
+   SmallImg[2].onclick=function()
+   {
+    ProductImg.src=SmallImg[2].src;
+   }
+   SmallImg[3].onclick=function()
+   {
+    ProductImg.src=SmallImg[3].src;
+   }
+
+</script>
+</body>
+</html>

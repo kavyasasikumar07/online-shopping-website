@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Delete</title>
+</head>
+<style>
+    body{
+background-image: url('https://static.vecteezy.com/system/resources/previews/004/299/830/original/shopping-online-on-phone-with-podium-paper-art-modern-pink-background-gifts-box-illustration-free-vector.jpg');
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+}
+</style>
+<body>
+    Category of Product: <input type="text" id="bcat"><br>
+    <input type="button" value="delete" id="delete">
+    <p id="res"></p>
+    <script>
+        const deletebtn = document.getElementById('delete');
+        const category = document.getElementById('bcat');
+        const result = document.getElementById('res');
+        deletebtn.addEventListener('click',()=>{
+            if(bcat.value==""){
+                result.innerText= "Please enter category";
+            }
+            else
+            {
+                fetch(`http://localhost:1004/api/shopping/${bcat.value}`,{
+                    method : "DELETE"
+                })
+                .then((res)=>{ return res.text()})
+                .then((res) => {result.innerText = res});
+            }
+        })
+
+    </script>
+</body>
+</html>
+
+

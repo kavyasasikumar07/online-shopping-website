@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Insert</title>
+</head>
+<style>
+    body{
+background-image: url('https://img.freepik.com/premium-photo/3d-rendering-online-shopping-system_464463-468.jpg');
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+}
+</style>
+<body>
+    <form>
+        Product ID: <input type="number" id="bid"><br>
+        Product Name: <input type="text" id="bname"><br>
+        Customer Name: <input type="text" id="pname"><br>
+        Category of Product: <input type="text" id="bcat"><br>
+        Price of Product: <input type="text" id="bprice"><br>
+        <input type="button" value="insert" id="insert">
+    </form>
+    <p id="res"></p>
+    <script>
+        const bid = document.getElementById('bid');
+        const bname = document.getElementById('bname');
+        const pname = document.getElementById('pname');
+        const bcat = document.getElementById('bcat');
+        const bprice = document.getElementById('bprice');
+        const insert = document.getElementById('insert');
+        const result = document.getElementById('res');
+
+        insert.addEventListener('click', () => {
+            var data = {
+                bid: parseInt(bid.value),
+                bname: bname.value,
+                pname: pname.value,
+                bcat: bcat.value,
+                bprice: parseFloat(bprice.value),
+            }
+            fetch('http://localhost:1004/api/shopping',{
+                method: "POST",
+                headers: {
+                    'Content-type':'application/json; charset=UTF-8'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(res=>{
+                return res.json()
+            })
+            .then(res=>{
+                result.innerText = JSON.stringify(res)
+            });
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>getone</title>
+</head>
+<style>
+    body{
+background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20210609/pngtree-3d-render-online-shopping-with-mobile-and-bag-image_727266.jpg');
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+}
+</style>
+<body>
+    Product ID: <input type="number" name="bid" id="bid"><br>
+    <input type="button" value="getone" id="getone">
+    <p id="res"></p>
+    <script>
+        const getone = document.getElementById('getone');
+        const bid = document.getElementById('bid');
+        const result = document.getElementById('res');
+        getone.addEventListener('click', () => {
+            if (parseInt(bid.value) == "") {
+                result.innerText = "Please enter product id";
+            }
+            else {
+                fetch(`http://localhost:1004/api/shopping/${bid.value}`)
+                    .then(res => { return res.json() })
+                    .then(res => { result.innerText = JSON.stringify(res) });
+            }
+        })
+    </script>
+</body>
+
+</html>

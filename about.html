@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        h3,p{
+            text-align: center;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Easy shop ecommerce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+</head>
+<body>
+   
+    <div class="contaniner">
+        <div class="navbar"> 
+            <div class="logo">
+               <a href="index.html"> <img src="images/logo.png" width="200px"></a>
+    
+            </div>
+            <nav>
+
+            <ul id="MenuItems">
+                <li><a href="demo.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="ref.html">Account </a></li>
+            </ul>
+        </nav>
+        <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
+        <img  src="images/menu.png" class="menu-icon" onclick="menutoggle()">  
+        </div>
+        </div>
+<!-- about design -->
+
+        <img src="images/account (1).png" width="100%">
+        <h3>"The joy of dressing is an art." - John Galliano</h3>
+        <p>Have a great experience of shopping with us </p>
+     
+<!-- footer -->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <h3>Download our app</h3>
+                <p>Download App for Android and ios mobile phone.</p>
+                <div class="app-logo">
+                    <img src="images/play-store.png">
+                    <img src="images/app-store.png">
+
+                </div>
+            </div>
+            <div class="footer-col-2">
+                <img  src="images/logo.png">
+                
+            </div>
+            <div class="footer-col-3">
+                <h3>Follow us</h3>
+               <ul>
+                <li>Facebook</li>
+                <li>Instagram</li>
+                <li>Twitter </li>
+               </ul>
+            </div>
+            
+        </div>
+    </div>
+   
+
+</div>
+<!-- js -->
+<script>
+    var MenuItems=document.getElementById("MenuItems")
+    MenuItems.style.maxHeight="0 px";
+    function menutoggle(){
+        if(MenuItems.style.maxHeight=="0 px"){
+            MenuItems.style.maxHeight="200 px"
+        }
+        else{
+            MenuItems.style.maxHeight="0 px"
+        }
+    }
+</script>
+
+</body>
+</html>

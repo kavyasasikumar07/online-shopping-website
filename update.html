@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Update</title>
+</head>
+<style>
+    body{
+background-image: url('https://img.freepik.com/premium-psd/online-shopping-with-mobile-shopping-elements-mockup-template_1150-38884.jpg');
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+}
+</style>
+<body>
+    <form>
+        Product ID: <input type="number" name="bid" id="bid"><br>
+        Product Name: <input type="text" name="bname" id="bname"><br>
+        <input type="button" value="update" id="update">
+        <p id="res"></p>
+    </form>
+    <script>
+        const update = document.getElementById('update');
+        const result = document.getElementById('res');
+        const bname = document.getElementById('bname');
+        const bid = document.getElementById('bid');
+        update.addEventListener('click',()=>{
+            if(parseInt(bid.value)=="" || bname.value==""){
+                result.innerText ="Please enter rollno and name";
+            }
+            else{
+                var data = {
+                    bname : bname.value
+                };
+                fetch(`http://localhost:1004/api/shopping/${parseInt(bid.value)}`,{
+                    method :'PUT',
+                    body : JSON.stringify(data),
+                    headers :{
+                        'Content-type' : 'application/json; charset= UTF-8'
+                    }
+                })
+                  .then((res)=>{return res.text()})
+                  .then((res)=>{result.innerText = res});
+            }
+        });
+    </script>
+</body>
+</html>
